@@ -16,8 +16,8 @@ if __name__ == "__main__":
     for tk in todo_list:
         if tk.get('userId') == int(employee_id):
             task_dict = {"task": tk.get('title'),
-                        "completed": tk.get('completed'),
-                        "username": employee.json().get('username')}
+                         "completed": tk.get('completed'),
+                         "username": employee.json().get('username')}
             task_list.append(task_dict)
     todo_user[employee_id] = task_list
     filename = employee_id + '.json'
