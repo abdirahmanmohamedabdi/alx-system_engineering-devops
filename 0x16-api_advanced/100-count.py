@@ -12,6 +12,6 @@ def count_words(subreddit, word_list):
     global count_dic
     headers = {'User-agent': 'xica369'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    paramters = {'after': after}
+    parameters = {'after': after}
     response = requests.get(url, headers=headers, allow_redirects=False,
                             params=parameters)
