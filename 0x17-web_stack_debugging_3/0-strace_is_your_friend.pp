@@ -1,5 +1,5 @@
-# setting fixed at wordpress
-exec { 'settingsPress':
-  command => 'sed -i "s/\b.phpp\b/.php/g" /var/www/html/wp-settings.php'
-  provider => shell,
+exec { 'fix typo':
+  onlyif  => 'test -e /var/www/html/wp-settings.php',
+  command => "sed -i 's/phpp/php/' /var/www/html/wp-settings.php",
+  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
 }
